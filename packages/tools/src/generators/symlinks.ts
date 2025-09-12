@@ -1,0 +1,203 @@
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { TOOLS_CONFIG } from "../config.ts";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+/**
+ * Check if a path exists
+ */
+async function pathExists(targetPath: string): Promise<boolean> {
+	try {
+		await fs.access(targetPath);
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+/**
+ * Check if a path is a symbolic link
+ */
+async function isSymbolicLink(targetPath: string): Promise<boolean> {
+	try {
+		const stats = await fs.lstat(targetPath);
+		return stats.isSymbolicLink();
+	} catch {
+		return false;
+	}
+}
+
+/**
+ * Create a symbolic link using Node.js built-in APIs
+ */
+async function createSymlink(source: string, target: string): Promise<void> {
+	// Resolve paths from the project root, not from the tools directory
+	const projectRoot = path.resolve(__dirname, "../../../../");
+	const absoluteSource = path.resolve(projectRoot, source);
+	const absoluteTarget = path.resolve(projectRoot, target);
+
+	// Ensure target directory exists
+	const targetDir = path.dirname(absoluteTarget);
+	await fs.mkdir(targetDir, { recursive: true });
+
+	// Remove existing target if it exists
+	if (await pathExists(absoluteTarget)) {
+		if (await isSymbolicLink(absoluteTarget)) {
+			await fs.unlink(absoluteTarget);
+			console.log(`🗑️ Removed existing symlink: ${target}`);
+		} else {
+			// If it's a regular directory, remove it
+			await fs.rm(absoluteTarget, { recursive: true, force: true });
+			console.log(`🗑️ Removed existing directory: ${target}`);
+		}
+	}
+
+	// Create the symbolic link
+	// Use 'dir' type for directory symlinks on all platforms
+	const symlinkType = "dir";
+
+	try {
+		// For Windows, use absolute paths for better compatibility
+		// For Unix, use relative paths for portability
+		const linkTarget = process.platform === "win32"
+			? absoluteSource
+			: path.relative(path.dirname(absoluteTarget), absoluteSource);
+
+		console.log(`🔨 Creating ${symlinkType} with target: ${linkTarget}`);
+		await fs.symlink(linkTarget, absoluteTarget, symlinkType);
+		console.log(`✅ Created ${symlinkType}: ${target} -> ${source}`);
+
+		// Verify the symlink was created
+		const isSymlink = await isSymbolicLink(absoluteTarget);
+		console.log(`🔍 Verification - Is symlink: ${isSymlink}`);
+	} catch (error) {
+		console.error(`❌ Failed to create symlink for ${target}:`, error);
+		throw error;
+	}
+}
+
+/**
+ * Generate symbolic links for static folders
+ */
+export async function generateSymlinks(): Promise<void> {
+	console.log("🔗 Setting up static asset symlinks...");
+
+	const { source, targets } = TOOLS_CONFIG.symlinks;
+
+	// Ensure source directory exists
+	const projectRoot = path.resolve(__dirname, "../../../../");
+	const absoluteSource = path.resolve(projectRoot, source);
+	if (!(await pathExists(absoluteSource))) {
+		await fs.mkdir(absoluteSource, { recursive: true });
+		console.log(`📁 Created source directory: ${source}`);
+	}
+
+	// Create symlinks for each target
+	for (const target of targets) {
+		try {
+			await createSymlink(source, target);
+		} catch (error) {
+			console.error(`❌ Failed to create symlink ${target}:`, error);
+			// Continue with other targets even if one fails
+		}
+	}
+
+	console.log("✨ Static asset symlinks created successfully!");
+}
+
+/**
+ * Clean up symbolic links for static folders
+ */
+export async function cleanSymlinks(): Promise<void> {
+	console.log("🧹 Cleaning up static asset symlinks...");
+
+	const { targets } = TOOLS_CONFIG.symlinks;
+
+	for (const target of targets) {
+		// Resolve paths from the project root
+		const projectRoot = path.resolve(__dirname, "../../../../");
+		const absoluteTarget = path.resolve(projectRoot, target);
+
+		if (await pathExists(absoluteTarget)) {
+			try {
+				const stats = await fs.lstat(absoluteTarget);
+				if (stats.isSymbolicLink()) {
+					await fs.unlink(absoluteTarget);
+					console.log(`🗑️ Removed symlink: ${target}`);
+				} else {
+					console.log(`⚠️  Skipped non-symlink: ${target}`);
+				}
+			} catch (error) {
+				console.error(`❌ Failed to remove ${target}:`, error);
+			}
+		}
+	}
+
+	console.log("✨ Symlink cleanup completed!");
+}
+
+/**
+ * Check the status of symbolic links
+ */
+export async function checkSymlinks(): Promise<boolean> {
+	console.log("🔍 Checking symlink status...");
+
+	const { source, targets } = TOOLS_CONFIG.symlinks;
+	let allValid = true;
+
+	// Resolve paths from the project root
+	const projectRoot = path.resolve(__dirname, "../../../../");
+
+	// Check if source exists
+	const absoluteSource = path.resolve(projectRoot, source);
+	const sourceExists = await pathExists(absoluteSource);
+	console.log(
+		`${sourceExists ? "✅" : "❌"} Source: ${source} ${
+			sourceExists ? "exists" : "missing"
+		}`,
+	);
+
+	if (!sourceExists) allValid = false;
+
+	// Check each target
+	for (const target of targets) {
+		const absoluteTarget = path.resolve(projectRoot, target);
+		const exists = await pathExists(absoluteTarget);
+		const isSymlink = exists && (await isSymbolicLink(absoluteTarget));
+
+		let status = "Missing";
+		if (exists && isSymlink) {
+			status = "Valid symlink";
+		} else if (exists && !isSymlink) {
+			status = "Regular directory (not symlink)";
+		}
+
+		console.log(`${isSymlink ? "✅" : "❌"} ${target}: ${status}`);
+		if (!isSymlink) allValid = false;
+	}
+
+	return allValid;
+}
+
+/**
+ * Watch mode - ensure symlinks exist and are valid
+ */
+export async function watchSymlinks(): Promise<void> {
+	console.log("👀 Setting up symlinks for watch mode...");
+
+	// Initial setup
+	await generateSymlinks();
+
+	// In watch mode, we just ensure they exist initially
+	// The file system will handle the rest
+	console.log("✨ Symlinks ready for development!");
+}
+
+/**
+ * Run symlinks generation (main entry point)
+ */
+export async function run(): Promise<void> {
+	await generateSymlinks();
+}

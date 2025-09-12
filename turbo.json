@@ -1,0 +1,113 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "dev": {
+      "dependsOn": [
+        "barrel"
+      ],
+      "cache": false,
+      "persistent": true
+    },
+    "site#dev": {
+      "dependsOn": [
+        "@layerd/ui#barrel"
+      ],
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": [
+        "barrel",
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".svelte-kit/**",
+        "!**/.svelte-kit/cache/**"
+      ]
+    },
+    "styles": {
+      "cache": true,
+      "outputs": [
+        "dist/ui.css"
+      ]
+    },
+    "barrel": {
+      "inputs": [
+        "src/lib/**/*.{svelte,ts}",
+        "!src/lib/index.ts"
+      ],
+      "cache": true,
+      "outputs": [
+        "src/lib/index.ts"
+      ]
+    },
+    "components": {
+      "dependsOn": [
+        "barrel"
+      ],
+      "cache": true,
+      "outputs": [
+        "dist/**",
+        "!dist/**/*.css"
+      ]
+    },
+    "storybook#story": {
+      "dependsOn": [
+        "^barrel"
+      ],
+      "inputs": [
+        "../ui/src/lib/components/**/*.svelte"
+      ],
+      "cache": false,
+      "outputs": [
+        "src/stories/**/*.stories.svelte"
+      ]
+    },
+    "preview": {
+      "dependsOn": [
+        "build"
+      ],
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ]
+    },
+    "storybook": {
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": false,
+      "persistent": true
+    },
+    "build-storybook": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "storybook-static/**"
+      ]
+    },
+    "sync": {
+      "cache": false
+    },
+    "symlinks": {
+      "inputs": [
+        "packages/ui/static/**"
+      ],
+      "cache": false,
+      "outputs": [
+        "apps/*/static"
+      ]
+    },
+    "symlinks:clean": {
+      "cache": false
+    },
+    "symlinks:check": {
+      "cache": false
+    }
+  }
+}

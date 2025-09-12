@@ -1,0 +1,40 @@
+{
+	"name": "@layerd/tools",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"bin": {
+		"barrels": "./bin/barrels.js",
+		"stories": "./bin/stories.js",
+		"symlinks": "./bin/symlinks.js",
+		"types": "./src/main.ts"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./src/index.ts"
+		},
+		"./barrels": "./src/generators/barrels.ts",
+		"./stories": "./src/generators/stories.ts",
+		"./symlinks": "./src/generators/symlinks.ts",
+		"./types": "./src/generators/types.ts"
+	},
+	"scripts": {
+		"barrels": "barrels",
+		"stories": "stories",
+		"story": "node bin/stories.js",
+		"symlinks": "node bin/symlinks.js",
+		"symlinks:clean": "node -e \"import('./src/generators/symlinks.ts').then(m => m.cleanSymlinks())\"",
+		"symlinks:check": "node -e \"import('./src/generators/symlinks.ts').then(m => m.checkSymlinks())\"",
+		"types": "types",
+		"test": "barrels"
+	},
+	"devDependencies": {
+		"@types/node": "^24.3.1",
+		"typescript": "^5.9.2"
+	},
+	"dependencies": {
+		"chokidar": "^4.0.3",
+		"glob": "^11.0.3"
+	}
+}

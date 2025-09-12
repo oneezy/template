@@ -1,0 +1,9 @@
+{
+  "$schema": "./.vnow/vnow.schema.json",
+  "docs": false,
+  "gitignore": false,
+  "settings": [
+    "vscode"
+  ],
+  "source": []
+}

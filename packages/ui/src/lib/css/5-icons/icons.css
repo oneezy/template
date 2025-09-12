@@ -1,0 +1,231 @@
+/* Icon Themes
+*************************************/
+[data-icons='material-symbols'] {
+	.icon-home {
+		@apply icon-[material-symbols--home];
+	}
+	.icon-user {
+		@apply icon-[mdi--account];
+	}
+	.icon-settings {
+		@apply icon-[mdi--cog];
+	}
+	.icon-menu {
+		@apply icon-[mdi--menu];
+	}
+	.icon-close {
+		@apply icon-[mdi--close];
+	}
+	.icon-search {
+		@apply icon-[mdi--magnify];
+	}
+	.icon-edit {
+		@apply icon-[mdi--pencil];
+	}
+	.icon-delete {
+		@apply icon-[mdi--delete];
+	}
+	.icon-add {
+		@apply icon-[mdi--plus];
+	}
+	.icon-check {
+		@apply icon-[mdi--check];
+	}
+	.icon-arrow-right {
+		@apply icon-[mdi--arrow-right];
+	}
+	.icon-arrow-left {
+		@apply icon-[mdi--arrow-left];
+	}
+	.icon-arrow-up {
+		@apply icon-[mdi--arrow-up];
+	}
+	.icon-arrow-down {
+		@apply icon-[mdi--arrow-down];
+	}
+	.icon-chevron-right {
+		@apply icon-[mdi--chevron-right];
+	}
+	.icon-chevron-left {
+		@apply icon-[mdi--chevron-left];
+	}
+	.icon-chevron-up {
+		@apply icon-[mdi--chevron-up];
+	}
+	.icon-chevron-down {
+		@apply icon-[mdi--chevron-down];
+	}
+}
+
+[data-icons='mdi'] {
+	.icon-home {
+		@apply icon-[mdi--home];
+	}
+	.icon-user {
+		@apply icon-[mdi--account];
+	}
+	.icon-settings {
+		@apply icon-[mdi--cog];
+	}
+	.icon-menu {
+		@apply icon-[mdi--menu];
+	}
+	.icon-close {
+		@apply icon-[mdi--close];
+	}
+	.icon-search {
+		@apply icon-[mdi--magnify];
+	}
+	.icon-edit {
+		@apply icon-[mdi--pencil];
+	}
+	.icon-delete {
+		@apply icon-[mdi--delete];
+	}
+	.icon-add {
+		@apply icon-[mdi--plus];
+	}
+	.icon-check {
+		@apply icon-[mdi--check];
+	}
+	.icon-arrow-right {
+		@apply icon-[mdi--arrow-right];
+	}
+	.icon-arrow-left {
+		@apply icon-[mdi--arrow-left];
+	}
+	.icon-arrow-up {
+		@apply icon-[mdi--arrow-up];
+	}
+	.icon-arrow-down {
+		@apply icon-[mdi--arrow-down];
+	}
+	.icon-chevron-right {
+		@apply icon-[mdi--chevron-right];
+	}
+	.icon-chevron-left {
+		@apply icon-[mdi--chevron-left];
+	}
+	.icon-chevron-up {
+		@apply icon-[mdi--chevron-up];
+	}
+	.icon-chevron-down {
+		@apply icon-[mdi--chevron-down];
+	}
+}
+
+/* Heroicons Theme Overrides */
+[data-icons='heroicons'] {
+	.icon-home {
+		@apply icon-[heroicons--home];
+	}
+	.icon-user {
+		@apply icon-[heroicons--user];
+	}
+	.icon-settings {
+		@apply icon-[heroicons--cog-6-tooth];
+	}
+	.icon-menu {
+		@apply icon-[heroicons--bars-3];
+	}
+	.icon-close {
+		@apply icon-[heroicons--x-mark];
+	}
+	.icon-search {
+		@apply icon-[heroicons--magnifying-glass];
+	}
+	.icon-edit {
+		@apply icon-[heroicons--pencil];
+	}
+	.icon-delete {
+		@apply icon-[heroicons--trash];
+	}
+	.icon-add {
+		@apply icon-[heroicons--plus];
+	}
+	.icon-check {
+		@apply icon-[heroicons--check];
+	}
+	.icon-arrow-right {
+		@apply icon-[heroicons--arrow-right];
+	}
+	.icon-arrow-left {
+		@apply icon-[heroicons--arrow-left];
+	}
+	.icon-arrow-up {
+		@apply icon-[heroicons--arrow-up];
+	}
+	.icon-arrow-down {
+		@apply icon-[heroicons--arrow-down];
+	}
+	.icon-chevron-right {
+		@apply icon-[heroicons--chevron-right];
+	}
+	.icon-chevron-left {
+		@apply icon-[heroicons--chevron-left];
+	}
+	.icon-chevron-up {
+		@apply icon-[heroicons--chevron-up];
+	}
+	.icon-chevron-down {
+		@apply icon-[heroicons--chevron-down];
+	}
+}
+
+/* Carbon Theme Overrides */
+[data-icons='carbon'] {
+	.icon-home {
+		@apply icon-[carbon--home];
+	}
+	.icon-user {
+		@apply icon-[carbon--user];
+	}
+	.icon-settings {
+		@apply icon-[carbon--settings];
+	}
+	.icon-menu {
+		@apply icon-[carbon--menu];
+	}
+	.icon-close {
+		@apply icon-[carbon--close];
+	}
+	.icon-search {
+		@apply icon-[carbon--search];
+	}
+	.icon-edit {
+		@apply icon-[carbon--edit];
+	}
+	.icon-delete {
+		@apply icon-[carbon--trash-can];
+	}
+	.icon-add {
+		@apply icon-[carbon--add];
+	}
+	.icon-check {
+		@apply icon-[carbon--checkmark];
+	}
+	.icon-arrow-right {
+		@apply icon-[carbon--arrow-right];
+	}
+	.icon-arrow-left {
+		@apply icon-[carbon--arrow-left];
+	}
+	.icon-arrow-up {
+		@apply icon-[carbon--arrow-up];
+	}
+	.icon-arrow-down {
+		@apply icon-[carbon--arrow-down];
+	}
+	.icon-chevron-right {
+		@apply icon-[carbon--chevron-right];
+	}
+	.icon-chevron-left {
+		@apply icon-[carbon--chevron-left];
+	}
+	.icon-chevron-up {
+		@apply icon-[carbon--chevron-up];
+	}
+	.icon-chevron-down {
+		@apply icon-[carbon--chevron-down];
+	}
+}

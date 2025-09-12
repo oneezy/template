@@ -1,0 +1,6 @@
+@theme inline {
+	/* radius */
+	--radius-base: var(--theme-radius-base, var(--theme-radius, var(--radius-xl, 0)));
+	--radius-box: var(--theme-radius-box, var(--theme-radius, var(--radius-xl, 0)));
+	--radius-button: var(--theme-radius-button, var(--theme-radius, var(--radius-md, 0)));
+}

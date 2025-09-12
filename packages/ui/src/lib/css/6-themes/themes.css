@@ -1,0 +1,41 @@
+/* COLOR THEMES 
+************************************************************/
+/* Dracula Theme */
+[data-theme='dracula'] {
+	--theme-color-primary: #bd93f9;
+	--theme-color-secondary: #ff79c6;
+	--theme-color-accent: #50fa7b;
+	--theme-color-neutral: #6272a4;
+}
+
+/* Retro Theme */
+[data-theme='retro'] {
+	--theme-color-primary: #f39c12;
+	--theme-color-secondary: #e74c3c;
+	--theme-color-accent: #2ecc71;
+	--theme-color-neutral: #95a5a6;
+}
+
+/* Corporate Theme */
+[data-theme='corporate'] {
+	--theme-color-primary: #2c3e50;
+	--theme-color-secondary: #34495e;
+	--theme-color-accent: #3498db;
+	--theme-color-neutral: #7f8c8d;
+}
+
+/* Cyberpunk Theme */
+[data-theme='cyberpunk'] {
+	--theme-color-primary: #00ff00;
+	--theme-color-secondary: #ff00ff;
+	--theme-color-accent: #00ffff;
+	--theme-color-neutral: #333333;
+}
+
+/* ICON THEMES 
+************************************************************/
+[data-icons] {
+	.icon-atom {
+		@apply icon-[solar--atom-outline];
+	}
+}

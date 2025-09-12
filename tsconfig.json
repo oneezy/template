@@ -1,0 +1,17 @@
+{
+	"extends": "./packages/config/ts/tsconfig.base.json",
+	"compilerOptions": {
+		"composite": true,
+		"declaration": true,
+		"declarationMap": true
+	},
+	"references": [
+		{ "path": "./apps/site" },
+		{ "path": "./apps/storybook" },
+		{ "path": "./packages/config/ts" },
+		{ "path": "./packages/tools" },
+		{ "path": "./packages/ui" }
+	],
+	"files": [],
+	"include": []
+}

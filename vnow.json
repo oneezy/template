@@ -1,0 +1,21 @@
+{
+  "$schema": "./.vnow/vnow.schema.json",
+  "docs": true,
+  "gitignore": false,
+  "settings": [
+    "vscode"
+  ],
+  "source": [
+    "svecosystem/runed",
+    "sveltejs/svelte/cli/docs",
+    "sveltejs/vite-plugin-svelte",
+    "sveltejs/svelte/documentation/docs",
+    "sveltejs/kit/documentation/docs",
+    "storybookjs/storybook/docs",
+    "google-gemini/gemini-cli",
+    "vercel/turborepo/docs/site/content/docs",
+    "pnpm/pnpm.io/docs",
+    "tailwindlabs/tailwindcss.com/src/docs",
+    "sveltejs/kit/documentation/docs/30-advanced"
+  ]
+}

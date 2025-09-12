@@ -1,0 +1,24 @@
+/* 3. Components
+*************************************************************************/
+
+/* container */
+
+/* buttons */
+.btn-container {
+	@apply flex w-full items-center gap-2 text-wrap;
+
+	&:has(svg + svg) {
+		@apply justify-start;
+	}
+	&:has(svg + svg:last-child) {
+		@apply justify-start;
+		& > *:last-child {
+			@apply ml-auto;
+		}
+	}
+}
+
+/* cards */
+.card {
+	@apply min-w-20 rounded-lg p-1;
+}

@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+@source './';
+@plugin "@iconify/tailwind4";
+/* @plugin "@tailwindcss/typography"; */
+@plugin "@tailwindcss/forms";
+
+@custom-variant state (&:is(:hover, :focus-visible, :active));
+
+/* 1. Theme */
+@import './css/1-theme/colors.css';
+@import './css/1-theme/pairings.css';
+@import './css/1-theme/fonts.css';
+@import './css/1-theme/size.css';
+@import './css/1-theme/radii.css';
+
+/* 2. Base */
+@import './css/2-base/base.css' layer(base);
+
+/* 3. Presets */
+@import './css/3-presets/icons.css' layer(components);
+@import './css/3-presets/prose.css' layer(components);
+@import './css/3-presets/presets.css' layer(components);
+
+/* 4. Components */
+/* @import './css/4-components/components.css' layer(components); */
+
+/* 5. Icons */
+@import './css/5-icons/icons.css' layer(components);
+
+/* 6. Themes */
+@import './css/6-themes/themes.css' layer(theming);
+
+/* 1. Base
+*************************************************/
+
+@theme {
+	/* default */
+	--theme-color: var(--color-slate-500);
+	--theme-color-base: var(--color-slate-500);
+	--theme-color-neutral: var(--color-slate-500);
+	--theme-color-primary: var(--color-blue-500);
+	--theme-color-secondary: var(--color-rose-500);
+	--theme-color-accent: var(--color-green-500);
+
+	/* fonts */
+	--theme-font: var(--font-asta);
+
+	/* scale (default) */
+	--theme-scale: 1.125;
+
+	/* scale */
+	--theme-scale-xs: 0.875; /* 14px base */
+	--theme-scale-sm: 1; /* 16px base */
+	--theme-scale-md: 1.125; /* 18px base */
+	--theme-scale-lg: 1.25; /* 20px base */
+	--theme-scale-xl: 1.5; /* 24px base */
+
+	/* radius */
+	--theme-radius: 9999px;
+	--theme-radius-box: 1.5rem;
+	--theme-radius-button: 10em;
+}
+
+@layer utilities {
+	.container {
+		@apply mx-auto max-w-7xl px-4 md:px-8;
+	}
+
+	.bleed {
+		@apply relative end-[calc(50%-50svw)] start-[calc(50%-50svw)] w-[100svw];
+	}
+}
+@utility text-md {
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+
+@utility mask-lr {
+	@apply mask-alpha mask-r-from-black mask-r-from-80% mask-r-to-transparent mask-l-from-black mask-l-from-80% mask-l-to-transparent;
+}
+
+@utility text-trim {
+	text-box: trim-both cap alphabetic;
+}
+
+/* Prose Utilities */
+@utility prose-xs {
+	--prose-scale: var(--prose-scale-xs);
+}
+
+@utility prose-sm {
+	--prose-scale: var(--prose-scale-sm);
+}
+
+@utility prose-md {
+	--prose-scale: var(--prose-scale-md);
+}
+
+@utility prose-lg {
+	--prose-scale: var(--prose-scale-lg);
+}
+
+@utility prose-xl {
+	--prose-scale: var(--prose-scale-xl);
+}

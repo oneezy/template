@@ -1,0 +1,13 @@
+{
+	"extends": [
+		"../../packages/config/ts/tsconfig.svelte.json",
+		"./.svelte-kit/tsconfig.json"
+	],
+	"exclude": [
+		"node_modules/**",
+		"dist/**",
+		".svelte-kit/**",
+		"storybook-static/**",
+		"**/.turbo/**"
+	]
+}

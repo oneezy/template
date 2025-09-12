@@ -1,0 +1,25 @@
+{
+  "name": "@layerd/config-ts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig.base": "./tsconfig.base.json",
+    "./tsconfig.svelte": "./tsconfig.svelte.json",
+    "./tsconfig.vite": "./tsconfig.vite.json",
+    "./tsconfig.tools": "./tsconfig.tools.json",
+    "./tsconfig.ui": "./tsconfig.ui.json"
+  },
+  "files": [
+    "tsconfig.base.json",
+    "tsconfig.svelte.json",
+    "tsconfig.vite.json",
+    "tsconfig.tools.json",
+    "tsconfig.ui.json"
+  ],
+  "devDependencies": {
+  },
+  "peerDependencies": {
+    "vite": "^7.0.0"
+  }
+}

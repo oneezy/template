@@ -1,0 +1,55 @@
+<script module lang="ts">
+  import { defineMeta } from "@storybook/addon-svelte-csf";
+  import { Button } from "@layerd/ui";
+  import { fn } from "storybook/test";
+  import type { ComponentProps } from "@layerd/ui";
+
+  // Define button configurations
+  const allVariants: ComponentProps[] = [
+    { neutral: true, label: "Neutral" },
+    { primary: true, label: "Primary" },
+    { secondary: true, label: "Secondary" },
+    { lite: true, label: "Lite" },
+    { secondary: true, disabled: true, label: "Disabled" },
+  ];
+
+  const buttonStates: ComponentProps[] = [
+    { primary: true, label: "Default" },
+    { primary: true, disabled: true, label: "Disabled" },
+  ];
+
+  const buttonSizes: ComponentProps[] = [
+    { size: "xs", label: "XSmall" },
+    { size: "sm", label: "Small" },
+    { size: "md", label: "Medium" },
+    { size: "lg", label: "Large" },
+    { size: "xl", label: "XLarge" },
+  ];
+
+  // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
+  const { Story } = defineMeta({
+    title: "Components/Atoms/Button",
+    component: Button,
+    tags: ["button", "form"],
+    args: {
+      onclick: fn(),
+    },
+  });
+</script>
+
+<!-- Template for multiple buttons -->
+{#snippet template(args: any)}
+  <div class="flex gap-4 items-center justify-center">
+    {#each args.buttons as buttonProps}
+      <Button {...buttonProps} />
+    {/each}
+  </div>
+{/snippet}
+
+<!-- Single button stories -->
+<Story name="Default" args={{ label: "Button", neutral: true }} />
+
+<!-- Multiple button stories - using template with script data -->
+<Story name="All Variants" tags={["!dev"]} args={{ buttons: allVariants }} {template} />
+<Story name="Button States" tags={["!dev"]} args={{ buttons: buttonStates }} {template} />
+<Story name="Button Sizes" tags={["!dev"]} args={{ buttons: buttonSizes }} {template} />

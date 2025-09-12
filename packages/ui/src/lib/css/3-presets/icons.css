@@ -1,0 +1,828 @@
+/* Icon base utility */
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.125em;
+}
+
+/* ICON THEME (default)
+*************************************/
+
+/* theme */
+.icon-light-mode {
+	@apply icon-[material-symbols--light-mode];
+}
+.icon-dark-mode {
+	@apply icon-[material-symbols--dark-mode];
+}
+.icon-palette {
+	@apply icon-[material-symbols--palette];
+}
+.icon-opacity {
+	@apply icon-[material-symbols--opacity];
+}
+.icon-format-color-fill {
+	@apply icon-[material-symbols--format-color-fill];
+}
+.icon-format-color-reset {
+	@apply icon-[material-symbols--format-color-reset];
+}
+.icon-format-paint {
+	@apply icon-[material-symbols--format-paint];
+}
+
+/* notifications */
+.icon-notifications {
+	@apply icon-[material-symbols--notifications];
+}
+.icon-notifications-unread {
+	@apply icon-[material-symbols--notifications-unread];
+}
+.icon-info {
+	@apply icon-[material-symbols--info];
+}
+.icon-warning {
+	@apply icon-[material-symbols--warning];
+}
+.icon-priority-high {
+	@apply icon-[material-symbols--priority-high];
+}
+.icon-check {
+	@apply icon-[material-symbols--check];
+}
+.icon-check-circle {
+	@apply icon-[material-symbols--check-circle];
+}
+
+/* arrows */
+.icon-360 {
+	@apply icon-[material-symbols--360];
+}
+.icon-arrow-forward {
+	@apply icon-[material-symbols--arrow-forward];
+}
+.icon-arrow-outward {
+	@apply icon-[material-symbols--arrow-outward];
+}
+.icon-arrow-right {
+	@apply icon-[material-symbols--arrow-right];
+}
+.icon-arrow-selector-tool {
+	@apply icon-[material-symbols--arrow-selector-tool];
+}
+.icon-compare-arrows {
+	@apply icon-[material-symbols--compare-arrows];
+}
+.icon-line-end-arrow {
+	@apply icon-[material-symbols--line-end-arrow];
+}
+.icon-line-end-circle {
+	@apply icon-[material-symbols--line-end-circle];
+}
+.icon-play-arrow {
+	@apply icon-[material-symbols--play-arrow];
+}
+.icon-play-circle {
+	@apply icon-[material-symbols--play-circle];
+}
+.icon-chevron-right {
+	@apply icon-[material-symbols--chevron-right];
+}
+
+/* account */
+.icon-account-circle {
+	@apply icon-[material-symbols--account-circle];
+}
+
+/* actions */
+.icon-add {
+	@apply icon-[material-symbols--add];
+}
+
+/* nature */
+.icon-air {
+	@apply icon-[material-symbols--air];
+}
+.icon-airware {
+	@apply icon-[material-symbols--airware];
+}
+.icon-bolt {
+	@apply icon-[material-symbols--bolt];
+}
+.icon-cloud {
+	@apply icon-[material-symbols--cloud];
+}
+.icon-electric-bolt {
+	@apply icon-[material-symbols--electric-bolt];
+}
+.icon-globe {
+	@apply icon-[material-symbols--globe];
+}
+.icon-hive {
+	@apply icon-[material-symbols--hive];
+}
+.icon-hub {
+	@apply icon-[material-symbols--hub];
+}
+.icon-imagesmode {
+	@apply icon-[material-symbols--imagesmode];
+}
+.icon-park {
+	@apply icon-[material-symbols--park];
+}
+.icon-public {
+	@apply icon-[material-symbols--public];
+}
+
+/* time */
+.icon-alarm {
+	@apply icon-[material-symbols--alarm];
+}
+.icon-schedule {
+	@apply icon-[material-symbols--schedule];
+}
+
+/* communication */
+.icon-alternate-email {
+	@apply icon-[material-symbols--alternate-email];
+}
+.icon-call {
+	@apply icon-[material-symbols--call];
+}
+.icon-chat {
+	@apply icon-[material-symbols--chat];
+}
+.icon-contact-support {
+	@apply icon-[material-symbols--contact-support];
+}
+.icon-mail {
+	@apply icon-[material-symbols--mail];
+}
+.icon-send {
+	@apply icon-[material-symbols--send];
+}
+
+/* media */
+.icon-android-camera {
+	@apply icon-[material-symbols--android-camera];
+}
+.icon-android-recorder {
+	@apply icon-[material-symbols--android-recorder];
+}
+.icon-animated-images {
+	@apply icon-[material-symbols--animated-images];
+}
+.icon-image {
+	@apply icon-[material-symbols--image];
+}
+.icon-mic {
+	@apply icon-[material-symbols--mic];
+}
+.icon-mic-off {
+	@apply icon-[material-symbols--mic-off];
+}
+.icon-movie {
+	@apply icon-[material-symbols--movie];
+}
+.icon-music-note {
+	@apply icon-[material-symbols--music-note];
+}
+.icon-pause {
+	@apply icon-[material-symbols--pause];
+}
+.icon-photo-camera {
+	@apply icon-[material-symbols--photo-camera];
+}
+
+/* interface */
+.icon-menu {
+	@apply icon-[material-symbols--menu];
+}
+.icon-close {
+	@apply icon-[material-symbols--close];
+}
+.icon-expand-all {
+	@apply icon-[material-symbols--expand-all];
+}
+.icon-expand-circle-right {
+	@apply icon-[material-symbols--expand-circle-right];
+}
+.icon-expand-less {
+	@apply icon-[material-symbols--expand-less];
+}
+.icon-expand-more {
+	@apply icon-[material-symbols--expand-more];
+}
+.icon-fullscreen {
+	@apply icon-[material-symbols--fullscreen];
+}
+.icon-fullscreen-exit {
+	@apply icon-[material-symbols--fullscreen-exit];
+}
+.icon-grid-3x3 {
+	@apply icon-[material-symbols--grid-3x3];
+}
+.icon-widgets {
+	@apply icon-[material-symbols--widgets];
+}
+.icon-apps {
+	@apply icon-[material-symbols--apps];
+}
+.icon-widget-small {
+	@apply icon-[material-symbols--widget-small];
+}
+.icon-grid-view {
+	@apply icon-[material-symbols--grid-view];
+}
+.icon-table-rows {
+	@apply icon-[material-symbols--table-rows];
+}
+.icon-table-rows-narrow {
+	@apply icon-[material-symbols--table-rows-narrow];
+}
+.icon-menu-open {
+	@apply icon-[material-symbols--menu-open];
+}
+.icon-more-vert {
+	@apply icon-[material-symbols--more-vert];
+}
+.icon-open-in-new {
+	@apply icon-[material-symbols--open-in-new];
+}
+
+/* files */
+.icon-attach-file {
+	@apply icon-[material-symbols--attach-file];
+}
+.icon-attachment {
+	@apply icon-[material-symbols--attachment];
+}
+.icon-content-copy {
+	@apply icon-[material-symbols--content-copy];
+}
+.icon-description {
+	@apply icon-[material-symbols--description];
+}
+.icon-download {
+	@apply icon-[material-symbols--download];
+}
+.icon-publish {
+	@apply icon-[material-symbols--publish];
+}
+.icon-folder {
+	@apply icon-[material-symbols--folder];
+}
+.icon-folder-open {
+	@apply icon-[material-symbols--folder-open];
+}
+.icon-draft {
+	@apply icon-[material-symbols--draft];
+}
+.icon-file-copy {
+	@apply icon-[material-symbols--file-copy];
+}
+.icon-picture-as-pdf {
+	@apply icon-[material-symbols--picture-as-pdf];
+}
+.icon-save {
+	@apply icon-[material-symbols--save];
+}
+.icon-print {
+	@apply icon-[material-symbols--print];
+}
+
+/* automation */
+.icon-auto-awesome {
+	@apply icon-[material-symbols--auto-awesome];
+}
+.icon-auto-fix {
+	@apply icon-[material-symbols--auto-fix];
+}
+.icon-automation {
+	@apply icon-[material-symbols--automation];
+}
+.icon-magic-button {
+	@apply icon-[material-symbols--magic-button];
+}
+.icon-refresh {
+	@apply icon-[material-symbols--refresh];
+}
+.icon-repeat {
+	@apply icon-[material-symbols--repeat];
+}
+.icon-replay-circle-filled {
+	@apply icon-[material-symbols--replay-circle-filled];
+}
+.icon-rotate-left {
+	@apply icon-[material-symbols--rotate-left];
+}
+.icon-rotate-right {
+	@apply icon-[material-symbols--rotate-right];
+}
+.icon-sync {
+	@apply icon-[material-symbols--sync];
+}
+
+/* data */
+.icon-badge {
+	@apply icon-[material-symbols--badge];
+}
+.icon-bar-chart {
+	@apply icon-[material-symbols--bar-chart];
+}
+.icon-barcode {
+	@apply icon-[material-symbols--barcode];
+}
+.icon-memory {
+	@apply icon-[material-symbols--memory];
+}
+.icon-memory-alt {
+	@apply icon-[material-symbols--memory-alt];
+}
+.icon-qr-code {
+	@apply icon-[material-symbols--qr-code];
+}
+.icon-qr-code-scanner {
+	@apply icon-[material-symbols--qr-code-scanner];
+}
+.icon-stacks {
+	@apply icon-[material-symbols--stacks];
+}
+
+/* status */
+.icon-block {
+	@apply icon-[material-symbols--block];
+}
+.icon-emergency {
+	@apply icon-[material-symbols--emergency];
+}
+.icon-error {
+	@apply icon-[material-symbols--error];
+}
+.icon-fiber-new {
+	@apply icon-[material-symbols--fiber-new];
+}
+
+/* content */
+.icon-bookmark {
+	@apply icon-[material-symbols--bookmark];
+}
+.icon-favorite {
+	@apply icon-[material-symbols--favorite];
+}
+.icon-flag {
+	@apply icon-[material-symbols--flag];
+}
+.icon-star {
+	@apply icon-[material-symbols--star];
+}
+.icon-star-half {
+	@apply icon-[material-symbols--star-half];
+}
+
+/* editing */
+.icon-brush {
+	@apply icon-[material-symbols--brush];
+}
+.icon-colorize {
+	@apply icon-[material-symbols--colorize];
+}
+.icon-colors {
+	@apply icon-[material-symbols--colors];
+}
+.icon-crop-free {
+	@apply icon-[material-symbols--crop-free];
+}
+.icon-delete {
+	@apply icon-[material-symbols--delete];
+}
+.icon-drag-handle {
+	@apply icon-[material-symbols--drag-handle];
+}
+.icon-edit {
+	@apply icon-[material-symbols--edit];
+}
+.icon-format-bold {
+	@apply icon-[material-symbols--format-bold];
+}
+.icon-format-italic {
+	@apply icon-[material-symbols--format-italic];
+}
+.icon-format-quote {
+	@apply icon-[material-symbols--format-quote];
+}
+.icon-imagesearch-roller {
+	@apply icon-[material-symbols--imagesearch-roller];
+}
+.icon-invert-colors {
+	@apply icon-[material-symbols--invert-colors];
+}
+.icon-remove {
+	@apply icon-[material-symbols--remove];
+}
+.icon-reorder {
+	@apply icon-[material-symbols--reorder];
+}
+.icon-stroke-full {
+	@apply icon-[material-symbols--stroke-full];
+}
+.icon-style {
+	@apply icon-[material-symbols--style];
+}
+
+/* system */
+.icon-bug-report {
+	@apply icon-[material-symbols--bug-report];
+}
+.icon-dashboard {
+	@apply icon-[material-symbols--dashboard];
+}
+.icon-dashboard-customize {
+	@apply icon-[material-symbols--dashboard-customize];
+}
+.icon-desktop-windows {
+	@apply icon-[material-symbols--desktop-windows];
+}
+.icon-directory-sync {
+	@apply icon-[material-symbols--directory-sync];
+}
+.icon-network-intelligence {
+	@apply icon-[material-symbols--network-intelligence];
+}
+.icon-power-settings-new {
+	@apply icon-[material-symbols--power-settings-new];
+}
+.icon-sensors {
+	@apply icon-[material-symbols--sensors];
+}
+.icon-settings {
+	@apply icon-[material-symbols--settings];
+}
+.icon-smartphone {
+	@apply icon-[material-symbols--smartphone];
+}
+
+/* transportation */
+.icon-anchor {
+	@apply icon-[material-symbols--anchor];
+}
+.icon-directions-boat {
+	@apply icon-[material-symbols--directions-boat];
+}
+.icon-directions-car {
+	@apply icon-[material-symbols--directions-car];
+}
+.icon-directions-railway {
+	@apply icon-[material-symbols--directions-railway];
+}
+.icon-directions-railway-2 {
+	@apply icon-[material-symbols--directions-railway-2];
+}
+.icon-flight {
+	@apply icon-[material-symbols--flight];
+}
+.icon-flight-land {
+	@apply icon-[material-symbols--flight-land];
+}
+.icon-flight-takeoff {
+	@apply icon-[material-symbols--flight-takeoff];
+}
+.icon-flights-and-hotels {
+	@apply icon-[material-symbols--flights-and-hotels];
+}
+.icon-helicopter {
+	@apply icon-[material-symbols--helicopter];
+}
+.icon-local-shipping {
+	@apply icon-[material-symbols--local-shipping];
+}
+.icon-monorail {
+	@apply icon-[material-symbols--monorail];
+}
+.icon-moving {
+	@apply icon-[material-symbols--moving];
+}
+.icon-road {
+	@apply icon-[material-symbols--road];
+}
+.icon-rocket {
+	@apply icon-[material-symbols--rocket];
+}
+.icon-rocket-launch {
+	@apply icon-[material-symbols--rocket-launch];
+}
+
+/* biometric */
+.icon-fingerprint {
+	@apply icon-[material-symbols--fingerprint];
+}
+.icon-frame-person {
+	@apply icon-[material-symbols--frame-person];
+}
+.icon-group {
+	@apply icon-[material-symbols--group];
+}
+.icon-groups {
+	@apply icon-[material-symbols--groups];
+}
+.icon-person {
+	@apply icon-[material-symbols--person];
+}
+
+/* gaming */
+.icon-gamepad {
+	@apply icon-[material-symbols--gamepad];
+}
+.icon-play-shapes {
+	@apply icon-[material-symbols--play-shapes];
+}
+.icon-stadia-controller {
+	@apply icon-[material-symbols--stadia-controller];
+}
+
+/* tools */
+.icon-g-translate {
+	@apply icon-[material-symbols--g-translate];
+}
+.icon-help {
+	@apply icon-[material-symbols--help];
+}
+.icon-import-contacts {
+	@apply icon-[material-symbols--import-contacts];
+}
+.icon-keyboard {
+	@apply icon-[material-symbols--keyboard];
+}
+.icon-language {
+	@apply icon-[material-symbols--language];
+}
+.icon-mouse {
+	@apply icon-[material-symbols--mouse];
+}
+.icon-pattern {
+	@apply icon-[material-symbols--pattern];
+}
+.icon-question-mark {
+	@apply icon-[material-symbols--question-mark];
+}
+.icon-search {
+	@apply icon-[material-symbols--search];
+}
+
+/* navigation */
+.icon-home {
+	@apply icon-[material-symbols--home];
+}
+.icon-link {
+	@apply icon-[material-symbols--link];
+}
+.icon-link-off {
+	@apply icon-[material-symbols--link-off];
+}
+.icon-location-on {
+	@apply icon-[material-symbols--location-on];
+}
+.icon-map {
+	@apply icon-[material-symbols--map];
+}
+.icon-map-search {
+	@apply icon-[material-symbols--map-search];
+}
+.icon-my-location {
+	@apply icon-[material-symbols--my-location];
+}
+.icon-navigation {
+	@apply icon-[material-symbols--navigation];
+}
+.icon-near-me {
+	@apply icon-[material-symbols--near-me];
+}
+.icon-route {
+	@apply icon-[material-symbols--route];
+}
+
+/* security */
+.icon-key {
+	@apply icon-[material-symbols--key];
+}
+.icon-key-vertical {
+	@apply icon-[material-symbols--key-vertical];
+}
+.icon-lock {
+	@apply icon-[material-symbols--lock];
+}
+.icon-lock-open {
+	@apply icon-[material-symbols--lock-open];
+}
+.icon-login {
+	@apply icon-[material-symbols--login];
+}
+.icon-logout {
+	@apply icon-[material-symbols--logout];
+}
+.icon-security {
+	@apply icon-[material-symbols--security];
+}
+.icon-shield {
+	@apply icon-[material-symbols--shield];
+}
+
+/* weather */
+.icon-flash-on {
+	@apply icon-[material-symbols--flash-on];
+}
+.icon-mist {
+	@apply icon-[material-symbols--mist];
+}
+
+/* content */
+.icon-menu-book {
+	@apply icon-[material-symbols--menu-book];
+}
+
+/* control */
+.icon-mode-off-on {
+	@apply icon-[material-symbols--mode-off-on];
+}
+.icon-select-check-box {
+	@apply icon-[material-symbols--select-check-box];
+}
+.icon-swap-horiz {
+	@apply icon-[material-symbols--swap-horiz];
+}
+.icon-swap-vert {
+	@apply icon-[material-symbols--swap-vert];
+}
+.icon-switches {
+	@apply icon-[material-symbols--switches];
+}
+
+/* emotions */
+.icon-mood {
+	@apply icon-[material-symbols--mood];
+}
+.icon-mood-bad {
+	@apply icon-[material-symbols--mood-bad];
+}
+.icon-sentiment-dissatisfied {
+	@apply icon-[material-symbols--sentiment-dissatisfied];
+}
+.icon-sentiment-neutral {
+	@apply icon-[material-symbols--sentiment-neutral];
+}
+.icon-sentiment-satisfied {
+	@apply icon-[material-symbols--sentiment-satisfied];
+}
+
+/* commerce */
+.icon-paid {
+	@apply icon-[material-symbols--paid];
+}
+.icon-receipt {
+	@apply icon-[material-symbols--receipt];
+}
+.icon-restaurant {
+	@apply icon-[material-symbols--restaurant];
+}
+.icon-savings {
+	@apply icon-[material-symbols--savings];
+}
+.icon-sell {
+	@apply icon-[material-symbols--sell];
+}
+.icon-shopping-bag {
+	@apply icon-[material-symbols--shopping-bag];
+}
+.icon-shopping-cart {
+	@apply icon-[material-symbols--shopping-cart];
+}
+.icon-shoppingmode {
+	@apply icon-[material-symbols--shoppingmode];
+}
+
+/* dining */
+.icon-fork-spoon {
+	@apply icon-[material-symbols--fork-spoon];
+}
+
+/* science */
+.icon-experiment {
+	@apply icon-[material-symbols--experiment];
+}
+.icon-robot-2 {
+	@apply icon-[material-symbols--robot-2];
+}
+.icon-school {
+	@apply icon-[material-symbols--school];
+}
+.icon-science {
+	@apply icon-[material-symbols--science];
+}
+
+/* sharing */
+.icon-share {
+	@apply icon-[material-symbols--share];
+}
+.icon-support-agent {
+	@apply icon-[material-symbols--support-agent];
+}
+.icon-sync-alt {
+	@apply icon-[material-symbols--sync-alt];
+}
+.icon-tag {
+	@apply icon-[material-symbols--tag];
+}
+.icon-thumb-up {
+	@apply icon-[material-symbols--thumb-up];
+}
+.icon-thumb-down {
+	@apply icon-[material-symbols--thumb-down];
+}
+.icon-tile-small {
+	@apply icon-[material-symbols--tile-small];
+}
+.icon-timeline {
+	@apply icon-[material-symbols--timeline];
+}
+.icon-translate {
+	@apply icon-[material-symbols--translate];
+}
+.icon-travel {
+	@apply icon-[material-symbols--travel];
+}
+.icon-trending-up {
+	@apply icon-[material-symbols--trending-up];
+}
+.icon-trending-flat {
+	@apply icon-[material-symbols--trending-flat];
+}
+.icon-trending-down {
+	@apply icon-[material-symbols--trending-down];
+}
+.icon-tune {
+	@apply icon-[material-symbols--tune];
+}
+.icon-undo {
+	@apply icon-[material-symbols--undo];
+}
+.icon-update {
+	@apply icon-[material-symbols--update];
+}
+.icon-upgrade {
+	@apply icon-[material-symbols--upgrade];
+}
+.icon-upload {
+	@apply icon-[material-symbols--upload];
+}
+.icon-upload-2 {
+	@apply icon-[material-symbols--upload-2];
+}
+.icon-verified {
+	@apply icon-[material-symbols--verified];
+}
+.icon-verified-user {
+	@apply icon-[material-symbols--verified-user];
+}
+.icon-videocam {
+	@apply icon-[material-symbols--videocam];
+}
+.icon-videocam-off {
+	@apply icon-[material-symbols--videocam-off];
+}
+.icon-videogame-asset {
+	@apply icon-[material-symbols--videogame-asset];
+}
+.icon-videogame-asset-off {
+	@apply icon-[material-symbols--videogame-asset-off];
+}
+.icon-view-apps {
+	@apply icon-[material-symbols--view-apps];
+}
+.icon-view-compact {
+	@apply icon-[material-symbols--view-compact];
+}
+.icon-visibility {
+	@apply icon-[material-symbols--visibility];
+}
+.icon-visibility-off {
+	@apply icon-[material-symbols--visibility-off];
+}
+.icon-vpn-key {
+	@apply icon-[material-symbols--vpn-key];
+}
+.icon-vpn-key-off {
+	@apply icon-[material-symbols--vpn-key-off];
+}
+.icon-water {
+	@apply icon-[material-symbols--water];
+}
+.icon-width {
+	@apply icon-[material-symbols--width];
+}
+.icon-wifi {
+	@apply icon-[material-symbols--wifi];
+}
+.icon-work {
+	@apply icon-[material-symbols--work];
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@layerd/config-vite",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./vite.config.js"
+  },
+  "files": [
+    "vite.config.js"
+  ],
+  "dependencies": {
+    "@iconify-json/mdi": "^1.2.3",
+    "@sveltejs/kit": "^2.37.1",
+    "@sveltejs/vite-plugin-svelte": "^6.2.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "unplugin-icons": "^22.2.0",
+    "vite-plugin-devtools-json": "^1.0.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.5"
+  },
+  "peerDependencies": {
+    "vite": "^7.0.0"
+  }
+}

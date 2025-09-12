@@ -1,0 +1,14 @@
+<svg
+	class="current-color text-primary"
+	preserveAspectRatio="none" 
+	id="water-swoosh"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 363.5 73.5"
+>
+  <path 
+		id="trident"
+		class="text-primary"
+		fill="currentColor"
+		d="M0,66S21.3,32,68.3,18.1s79.6-2.2,107.7,11.7c28.1,13.9,57.4,20.7,88.2,18s77.6-10.8,99.4-47.8c0,0-1.8,30-36.4,51.8s-96.9,33.3-156.9,4.6C110.3,27.7,72.5,21.5,0,66h0Z"
+	/>
+</svg>

@@ -1,0 +1,160 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Colors" />
+
+> **💡 Theme Controls**: Use Storybook's built-in theme switcher in the toolbar to see colors change between light/dark modes and different themes.
+
+
+# Color System
+
+This design system uses an advanced OKLCH-based color theming system that automatically generates:
+- **19 perceptually uniform color scales** (50-950) from any base color
+- **Hundreds of intelligent light/dark pairings** that switch automatically
+- **Zero-config theme switching** via `color-scheme` property
+
+## How It Works
+
+Set a single base color:
+```css
+--theme-color-primary: red;
+```
+
+Get a complete color ecosystem with automatic light/dark variants using the `light-dark()` CSS function.
+
+## Theme Colors
+
+<ColorPalette>
+  <ColorItem
+    title="theme.color.neutral"
+    subtitle="Gray-based neutrals (from --theme-color-neutral)"
+    colors={{
+      '50': 'var(--color-neutral-50)',
+      '100': 'var(--color-neutral-100)',
+      '200': 'var(--color-neutral-200)',
+      '300': 'var(--color-neutral-300)',
+      '400': 'var(--color-neutral-400)',
+      '500': 'var(--color-neutral-500)',
+      '600': 'var(--color-neutral-600)',
+      '700': 'var(--color-neutral-700)',
+      '800': 'var(--color-neutral-800)',
+      '900': 'var(--color-neutral-900)',
+      '950': 'var(--color-neutral-950)',
+    }}
+  />
+  <ColorItem 
+    title="theme.color.primary" 
+    subtitle="Primary brand color (from --theme-color-primary: red)" 
+    colors={{
+      '50': 'var(--color-primary-50)',
+      '100': 'var(--color-primary-100)',
+      '200': 'var(--color-primary-200)',
+      '300': 'var(--color-primary-300)',
+      '400': 'var(--color-primary-400)',
+      '500': 'var(--color-primary-500)',
+      '600': 'var(--color-primary-600)',
+      '700': 'var(--color-primary-700)',
+      '800': 'var(--color-primary-800)',
+      '900': 'var(--color-primary-900)',
+      '950': 'var(--color-primary-950)',
+    }} 
+  />
+  <ColorItem 
+    title="theme.color.secondary" 
+    subtitle="Secondary accent color (from --theme-color-secondary: blue)" 
+    colors={{
+      '50': 'var(--color-secondary-50)',
+      '100': 'var(--color-secondary-100)',
+      '200': 'var(--color-secondary-200)',
+      '300': 'var(--color-secondary-300)',
+      '400': 'var(--color-secondary-400)',
+      '500': 'var(--color-secondary-500)',
+      '600': 'var(--color-secondary-600)',
+      '700': 'var(--color-secondary-700)',
+      '800': 'var(--color-secondary-800)',
+      '900': 'var(--color-secondary-900)',
+      '950': 'var(--color-secondary-950)',
+    }} 
+  />
+  <ColorItem
+    title="theme.color.accent"
+    subtitle="Accent color (from --theme-color-accent: var(--color-green-500))"
+    colors={{
+      '50': 'var(--color-accent-50)',
+      '100': 'var(--color-accent-100)',
+      '200': 'var(--color-accent-200)',
+      '300': 'var(--color-accent-300)',
+      '400': 'var(--color-accent-400)',
+      '500': 'var(--color-accent-500)',
+      '600': 'var(--color-accent-600)',
+      '700': 'var(--color-accent-700)',
+      '800': 'var(--color-accent-800)',
+      '900': 'var(--color-accent-900)',
+      '950': 'var(--color-accent-950)',
+    }}
+  />
+</ColorPalette>
+
+## Light/Dark Pairings
+
+The system automatically creates intelligent color pairings that switch based on `color-scheme`:
+
+<ColorPalette>
+  <ColorItem
+    title="Smart Pairings"
+    subtitle="These automatically switch between light/dark modes"
+    colors={{
+      'Text on Surface': 'var(--color-primary-950-50)',
+      'Surface': 'var(--color-primary-50-950)',
+      'Border': 'var(--color-primary-200-700)',
+      'Muted': 'var(--color-primary-500-400)',
+      'Hover': 'var(--color-primary-100-800)',
+    }}
+  />
+  <ColorItem
+    title="Common UI Patterns"
+    subtitle="Ready-to-use color combinations"
+    colors={{
+      'Card Background': 'var(--color-neutral-50-900)',
+      'Card Border': 'var(--color-neutral-200-700)',
+      'Button Primary': 'var(--color-primary-600-400)',
+      'Button Hover': 'var(--color-primary-700-300)',
+      'Text Primary': 'var(--color-neutral-900-100)',
+      'Text Secondary': 'var(--color-neutral-600-400)',
+    }}
+  />
+</ColorPalette>
+
+## Usage Examples
+
+```css
+/* Background that adapts to mode */
+.card {
+  background-color: var(--color-neutral-50-900);
+  border: 1px solid var(--color-neutral-200-700);
+  color: var(--color-neutral-900-100);
+}
+
+/* Primary button with automatic contrast */
+.btn-primary {
+  background-color: var(--color-primary-600-400);
+  color: var(--color-primary-50-950);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-700-300);
+}
+```
+
+## Theme Customization
+
+Override base colors in your CSS:
+
+```css
+:root {
+  --theme-color-primary: oklch(0.5 0.2 200); /* Custom blue */
+  --theme-color-secondary: #ff6b35;          /* Orange */
+  --theme-color-accent: var(--color-green-500); /* Predefined green */
+}
+```
+
+The system will automatically generate complete color scales and light/dark pairings from these base colors.

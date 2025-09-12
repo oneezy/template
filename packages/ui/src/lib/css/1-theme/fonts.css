@@ -1,0 +1,21 @@
+@import '@fontsource/inter';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource-variable/asta-sans';
+
+/* fonts */
+@theme inline {
+	/* sans */
+	--font-inter: 'Inter';
+	--font-asta: 'Asta Sans Variable';
+
+	/* serif */
+
+	/* mono */
+	--font-jetbrains: 'JetBrains Mono Variable', var(--font-mono);
+}
+
+@theme {
+	--font-sans: var(--theme-font-base, var(--theme-font, var(--font-sans)));
+	--font-base: var(--theme-font-base, var(--theme-font, var(--font-sans)));
+	--font-headings: var(--theme-font-headings, var(--theme-font, var(--font-sans)));
+}

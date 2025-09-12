@@ -1,0 +1,171 @@
+/* 2. Presets
+*************************************************************************/
+/* defaults */
+.theme-base {
+	@apply bg-base-100-900 text-base-950-50;
+}
+.theme-base-invert {
+	@apply bg-base-900-100 text-base-50-950;
+}
+
+/* heavy */
+.theme-heavy {
+	@apply bg-base-200-800 text-base-950-50;
+}
+.theme-heavy-base {
+	@apply bg-base-900-100 text-base-50-950;
+}
+.theme-heavy-base-invert {
+	@apply bg-base-100-900 text-base-950-50;
+}
+.theme-heavy-neutral {
+	@apply bg-neutral-900-100 text-neutral-50-950;
+}
+.theme-heavy-primary {
+	@apply bg-primary-500-500 text-primary-50-50;
+}
+.theme-heavy-secondary {
+	@apply bg-secondary-500-500 text-secondary-50-50;
+}
+.theme-heavy-accent {
+	@apply bg-accent-500-500 text-accent-50-50;
+}
+
+/* lite */
+.theme-lite {
+	@apply bg-base-200-700 text-base-700-200;
+}
+.theme-lite-base {
+	@apply bg-base-200-600 text-base-700-100;
+}
+.theme-lite-neutral {
+	@apply bg-neutral-200-600 text-neutral-700-100;
+}
+.theme-lite-primary {
+	@apply bg-primary-200-700 text-primary-700-200;
+}
+.theme-lite-secondary {
+	@apply bg-secondary-200-700 text-secondary-700-200;
+}
+.theme-lite-accent {
+	@apply bg-accent-200-700 text-accent-700-200;
+}
+
+/* outline */
+.theme-outline {
+	@apply text-base-950-50 border-base-900-100 border-2;
+}
+.theme-outline-base {
+	@apply text-base-950-50 border-base-950-50 border-2;
+}
+.theme-outline-neutral {
+	@apply text-neutral-950-50 border-neutral-950-50 border-2;
+}
+
+.theme-outline-primary {
+	@apply text-primary-500-500 border-primary-500-500 border-2;
+}
+.theme-outline-secondary {
+	@apply text-secondary-500-500 border-secondary-500-500 border-2;
+}
+.theme-outline-accent {
+	@apply text-accent-500-500 border-accent-500-500 border-2;
+}
+
+/* ghost */
+.theme-ghost {
+	@apply text-base-950-50 bg-[unset];
+}
+.theme-ghost-base {
+	@apply text-base-950-50 bg-[unset];
+}
+.theme-ghost-base-invert {
+	@apply text-base-50-950 bg-[unset];
+}
+.theme-ghost-invert {
+	@apply bg-[unset] text-white;
+}
+.theme-ghost-primary {
+	@apply text-primary-500 bg-[unset];
+}
+.theme-ghost-secondary {
+	@apply text-secondary-500 bg-[unset];
+}
+.theme-ghost-accent {
+	@apply text-accent-500 bg-[unset];
+}
+
+/* glass */
+.theme-glass {
+	@apply text-base-950-950/90 isolate bg-white/50 shadow backdrop-blur-2xl transition-all duration-200;
+	&:is(.card) {
+		@apply rounded-box;
+	}
+	&:is(.card:hover, .card:active) {
+		@apply text-base-950-950/100 border-white/50 bg-white/80;
+	}
+}
+.theme-glass-invert {
+	@apply text-base-50-50/90 isolate bg-black/70 bg-gradient-to-b from-black to-transparent shadow backdrop-blur-2xl;
+
+	&:is(.card) {
+		@apply rounded-box;
+	}
+	&:is(.card:hover, .card:active) {
+		@apply text-base-50-50/100 border-black/80 bg-black/50;
+	}
+}
+
+/* gradient */
+.theme-gradient {
+	@apply from-primary-500 to-secondary-500 bg-gradient-to-br;
+}
+
+/* Section Layout Variants */
+.layout-grid-2x2 {
+	@apply grid grid-cols-1 gap-6 md:grid-cols-2;
+}
+.layout-grid-3x3 {
+	@apply grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3;
+}
+.layout-grid-4x4 {
+	@apply grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4;
+}
+.layout-flex-row {
+	@apply flex flex-wrap gap-6;
+}
+.layout-flex-col {
+	@apply flex flex-col gap-6;
+}
+.layout-masonry {
+	@apply columns-1 gap-6 space-y-6 md:columns-2 lg:columns-3;
+}
+.layout-split {
+	@apply grid grid-cols-1 items-center gap-12 lg:grid-cols-2;
+}
+.layout-hero {
+	@apply space-y-8 text-center;
+}
+.layout-sidebar {
+	@apply grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px];
+}
+
+/* Section Layout Modifiers */
+.layout-odd {
+	@apply order-2 lg:order-1;
+}
+.layout-even {
+	@apply order-1 lg:order-2;
+}
+.layout-reverse {
+	@apply flex-col-reverse lg:flex-row-reverse;
+}
+.layout-tight {
+	@apply gap-4;
+}
+.layout-loose {
+	@apply gap-12;
+}
+.layout-compact {
+	@apply gap-2;
+}

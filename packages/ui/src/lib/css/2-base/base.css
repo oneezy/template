@@ -1,0 +1,54 @@
+:root {
+	color-scheme: light;
+}
+
+:root.dark {
+	color-scheme: dark;
+}
+
+html {
+	color-scheme: light dark;
+	scroll-behavior: smooth;
+	scroll-padding: 10rem;
+}
+
+html[style='color-scheme: light;'] {
+	color-scheme: light;
+}
+
+html[style='color-scheme: dark;'] {
+	color-scheme: dark;
+}
+
+html[style='color-scheme: light;'] .theme-invert {
+	color-scheme: dark;
+	@apply bg-base-950 text-base-50;
+}
+
+html[style='color-scheme: dark;'] .theme-invert {
+	color-scheme: light;
+	@apply bg-base-50 text-base-950;
+}
+
+.light {
+	color-scheme: light;
+	@apply bg-base-50 text-base-950;
+}
+.dark {
+	color-scheme: dark;
+	@apply bg-base-950 text-base-50;
+}
+
+body {
+	scroll-behavior: smooth;
+	@apply bg-base-50-800 text-base-950-50 font-base min-h-svh overflow-x-hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-sans;
+}
