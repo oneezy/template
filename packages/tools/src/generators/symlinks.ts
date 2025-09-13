@@ -5,6 +5,13 @@ import { TOOLS_CONFIG } from "../config.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Helper function to get project root - reduces redundancy
+const getProjectRoot = () => path.resolve(__dirname, "../../../../");
+
+// Helper function to resolve paths from project root - reduces redundancy
+const resolvePath = (...paths: string[]) =>
+	path.resolve(getProjectRoot(), ...paths);
+
 /**
  * Check if a path exists
  */
@@ -33,10 +40,9 @@ async function isSymbolicLink(targetPath: string): Promise<boolean> {
  * Create a symbolic link using Node.js built-in APIs
  */
 async function createSymlink(source: string, target: string): Promise<void> {
-	// Resolve paths from the project root, not from the tools directory
-	const projectRoot = path.resolve(__dirname, "../../../../");
-	const absoluteSource = path.resolve(projectRoot, source);
-	const absoluteTarget = path.resolve(projectRoot, target);
+	// Resolve paths from the project root using helper function
+	const absoluteSource = resolvePath(source);
+	const absoluteTarget = resolvePath(target);
 
 	// Ensure target directory exists
 	const targetDir = path.dirname(absoluteTarget);
@@ -73,6 +79,11 @@ async function createSymlink(source: string, target: string): Promise<void> {
 		const isSymlink = await isSymbolicLink(absoluteTarget);
 		console.log(`🔍 Verification - Is symlink: ${isSymlink}`);
 	} catch (error) {
+		// Handle EEXIST gracefully - deployment environments may pre-create directories
+		if (error instanceof Error && "code" in error && error.code === "EEXIST") {
+			console.log(`⚠️  Target already exists, skipping symlink: ${target}`);
+			return;
+		}
 		console.error(`❌ Failed to create symlink for ${target}:`, error);
 		throw error;
 	}
@@ -87,8 +98,7 @@ export async function generateSymlinks(): Promise<void> {
 	const { source, targets } = TOOLS_CONFIG.symlinks;
 
 	// Ensure source directory exists
-	const projectRoot = path.resolve(__dirname, "../../../../");
-	const absoluteSource = path.resolve(projectRoot, source);
+	const absoluteSource = resolvePath(source);
 	if (!(await pathExists(absoluteSource))) {
 		await fs.mkdir(absoluteSource, { recursive: true });
 		console.log(`📁 Created source directory: ${source}`);
@@ -116,9 +126,8 @@ export async function cleanSymlinks(): Promise<void> {
 	const { targets } = TOOLS_CONFIG.symlinks;
 
 	for (const target of targets) {
-		// Resolve paths from the project root
-		const projectRoot = path.resolve(__dirname, "../../../../");
-		const absoluteTarget = path.resolve(projectRoot, target);
+		// Resolve paths from the project root using helper function
+		const absoluteTarget = resolvePath(target);
 
 		if (await pathExists(absoluteTarget)) {
 			try {
@@ -147,11 +156,8 @@ export async function checkSymlinks(): Promise<boolean> {
 	const { source, targets } = TOOLS_CONFIG.symlinks;
 	let allValid = true;
 
-	// Resolve paths from the project root
-	const projectRoot = path.resolve(__dirname, "../../../../");
-
 	// Check if source exists
-	const absoluteSource = path.resolve(projectRoot, source);
+	const absoluteSource = resolvePath(source);
 	const sourceExists = await pathExists(absoluteSource);
 	console.log(
 		`${sourceExists ? "✅" : "❌"} Source: ${source} ${
@@ -163,7 +169,7 @@ export async function checkSymlinks(): Promise<boolean> {
 
 	// Check each target
 	for (const target of targets) {
-		const absoluteTarget = path.resolve(projectRoot, target);
+		const absoluteTarget = resolvePath(target);
 		const exists = await pathExists(absoluteTarget);
 		const isSymlink = exists && (await isSymbolicLink(absoluteTarget));
 
