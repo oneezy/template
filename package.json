@@ -1,9 +1,9 @@
 {
   "name": "template",
   "scripts": {
-    "dev": "turbo watch dev",
+    "dev": "turbo dev",
     "watch": "turbo watch dev storybook#story",
-    "build": "pnpm symlinks && turbo build",
+    "build": "turbo build",
     "preview": "turbo preview --filter=site",
     "preview:all": "turbo preview",
     "site": "turbo watch dev --filter=site",
@@ -16,8 +16,7 @@
     "update": "pnpm up --latest -r",
     "reset": "git clean -fdx",
     "clean": "git clean -fdX",
-    "clear": "git clean -fd",
-    "postinstall": "turbo symlinks"
+    "clear": "git clean -fd"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.2.13",
