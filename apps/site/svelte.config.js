@@ -14,6 +14,9 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter(),
+		files: {
+			assets: "../../packages/ui/static",
+		},
 		alias: {
 			// Workspace packages - point to source for hot reloading in apps
 			"@layerd/ui": resolve("../../packages/ui/src/lib"),

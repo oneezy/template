@@ -9,7 +9,7 @@ const config: StorybookConfig = {
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|ts|svelte|svelte.js|svelte.ts)",
   ],
-  staticDirs: ["../static"],
+  staticDirs: ["../../../packages/ui/static"],
   addons: [
     "@storybook/addon-svelte-csf",
     "@chromatic-com/storybook",
