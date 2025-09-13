@@ -23,7 +23,8 @@
       "outputs": [
         "dist/**",
         ".svelte-kit/**",
-        "!**/.svelte-kit/cache/**"
+        "!**/.svelte-kit/cache/**",
+        ".vercel/**"
       ]
     },
     "styles": {
