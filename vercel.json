@@ -1,0 +1,8 @@
+{
+	"builds": [
+		{
+			"src": "apps/site/package.json",
+			"use": "@vercel/sveltekit"
+		}
+	]
+}
